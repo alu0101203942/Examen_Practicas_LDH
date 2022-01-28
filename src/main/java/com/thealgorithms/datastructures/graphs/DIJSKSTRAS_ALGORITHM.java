@@ -12,7 +12,7 @@ import java.security.SecureRandom;
 class dijkstras {
 
     int k = 9;
-    private Random rand = SecureRandom.getInstanceStrong();
+    //private Random rand = SecureRandom.getInstanceStrong();
 
     /**
      *
@@ -52,14 +52,15 @@ class dijkstras {
      */
     int aleatorySelectionRCL(int maxTRCL) throws Exception {
         try{
+            Random rand = SecureRandom.getInstanceStrong();
             int low = 0;
             int high = maxTRCL;
-            int posSelected = this.rand.nextInt(high-low) + low;
+            int posSelected = rand.nextInt(high-low) + low;
             return posSelected;
         } catch (Exception e){
             System.out.println (e.getMessage());
         }
-
+        return 0;
     }
 
     /**

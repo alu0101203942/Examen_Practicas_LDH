@@ -27,26 +27,36 @@ public class MiniMaxAlgorithm {
     /**
      * Initializes the scores with 8 random leaf nodes
      */
-    public MiniMaxAlgorithm() {
-        scores = getRandomScores(3, 99);
-        height = log2(scores.length);
-    }
-
-    public static void main(String[] args) {
-        MiniMaxAlgorithm miniMaxAlgorith = new MiniMaxAlgorithm();
-        boolean isMaximizer = true; // Specifies the player that goes first.
-        boolean verbose = true; // True to show each players choices.
-        int bestScore;
-
-        bestScore = miniMaxAlgorith.miniMax(0, isMaximizer, 0, verbose);
-
-        if (verbose) {
-            System.out.println();
+    public MiniMaxAlgorithm() throws Exception{
+        try{
+            scores = getRandomScores(3, 99);
+            height = log2(scores.length);
+        }catch (Exception e){
+            System.out.println (e.getMessage());
         }
 
-        System.out.println(Arrays.toString(miniMaxAlgorith.getScores()));
-        System.out.println(
-                "The best score for " + (isMaximizer ? "Maximizer" : "Minimizer") + " is " + String.valueOf(bestScore));
+    }
+
+    public static void main(String[] args) throws Exception {
+        try{
+            MiniMaxAlgorithm miniMaxAlgorith = new MiniMaxAlgorithm();
+            boolean isMaximizer = true; // Specifies the player that goes first.
+            boolean verbose = true; // True to show each players choices.
+            int bestScore;
+
+            bestScore = miniMaxAlgorith.miniMax(0, isMaximizer, 0, verbose);
+
+            if (verbose) {
+                System.out.println();
+            }
+
+            System.out.println(Arrays.toString(miniMaxAlgorith.getScores()));
+            System.out.println(
+                    "The best score for " + (isMaximizer ? "Maximizer" : "Minimizer") + " is " + String.valueOf(bestScore));
+        }catch (Exception e){
+            System.out.println (e.getMessage());
+        }
+
     }
 
     /**
