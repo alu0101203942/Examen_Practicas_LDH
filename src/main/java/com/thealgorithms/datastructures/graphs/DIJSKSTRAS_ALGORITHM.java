@@ -8,6 +8,7 @@ import java.util.Random;
 class dijkstras {
 
     int k = 9;
+    private Random rand = SecureRandom.getInstanceStrong();
 
     int minDist(int dist[], Boolean Set[]) {
         int min = Integer.MAX_VALUE, min_index = -1;
@@ -30,10 +31,10 @@ class dijkstras {
     }
 	
     int aleatorySelectionRCL(int maxTRCL) {
-       Random r = new Random();
+
        int low = 0;
        int high = maxTRCL;
-       int posSelected = r.nextInt(high-low) + low;
+       int posSelected = this.rand.nextInt(high-low) + low;
        return posSelected;
     }
 	
