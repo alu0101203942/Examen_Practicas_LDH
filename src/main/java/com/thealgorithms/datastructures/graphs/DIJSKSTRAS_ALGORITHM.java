@@ -4,6 +4,7 @@ for better understanding
  */
 package com.thealgorithms.datastructures.graphs;
 import java.util.Random;
+import java.security.SecureRandom;
 
 class dijkstras {
 
