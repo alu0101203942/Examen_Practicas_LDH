@@ -1,0 +1,3 @@
+Circle https://app.circleci.com/pipelines/github/alu0101203942/Examen_Practicas_LDH
+Github https://github.com/alu0101203942/Examen_Practicas_LDH.git
+SonarCloud https://sonarcloud.io/summary/overall?id=alu0101203942_Examen_Practicas_LDH
