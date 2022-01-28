@@ -20,6 +20,7 @@ public class MiniMaxAlgorithm {
      */
     private int[] scores;
     private int height;
+    private Random rand = SecureRandom.getInstanceStrong();
 
     /**
      * Initializes the scores with 8 random leaf nodes
@@ -95,10 +96,10 @@ public class MiniMaxAlgorithm {
      */
     public static int[] getRandomScores(int size, int maxScore) {
         int[] randomScores = new int[(int) Math.pow(2, size)];
-        Random rand = new Random();
+
 
         for (int i = 0; i < randomScores.length; i++) {
-            randomScores[i] = rand.nextInt(maxScore) + 1;
+            randomScores[i] = this.rand.nextInt(maxScore) + 1;
         }
 
         return randomScores;
