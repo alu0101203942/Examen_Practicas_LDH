@@ -6,11 +6,20 @@ package com.thealgorithms.datastructures.graphs;
 import java.util.Random;
 import java.security.SecureRandom;
 
+/**
+ * Clase del algoritmo Dijkstras
+ */
 class dijkstras {
 
     int k = 9;
     private Random rand = SecureRandom.getInstanceStrong();
 
+    /**
+     *
+     * @param dist
+     * @param Set
+     * @return min_index;
+     */
     int minDist(int dist[], Boolean Set[]) {
         int min = Integer.MAX_VALUE, min_index = -1;
 
@@ -24,21 +33,40 @@ class dijkstras {
         return min_index;
     }
 
+    /**
+     *
+     * @param dist
+     */
     void print(int dist[]) {
         System.out.println("Vertex \t\t Distance");
         for (int i = 0; i < k; i++) {
             System.out.println(i + " \t " + dist[i]);
         }
     }
-	
-    int aleatorySelectionRCL(int maxTRCL) {
 
-       int low = 0;
-       int high = maxTRCL;
-       int posSelected = this.rand.nextInt(high-low) + low;
-       return posSelected;
+    /**
+     *
+     * @param maxTRCL
+     * @return
+     * @throws Exception
+     */
+    int aleatorySelectionRCL(int maxTRCL) throws Exception {
+        try{
+            int low = 0;
+            int high = maxTRCL;
+            int posSelected = this.rand.nextInt(high-low) + low;
+            return posSelected;
+        } catch (Exception e){
+            System.out.println (e.getMessage());
+        }
+
     }
-	
+
+    /**
+     *
+     * @param graph
+     * @param src
+     */
     void dijkstra(int graph[][], int src) {
         int dist[] = new int[k];
         Boolean Set[] = new Boolean[k];
@@ -66,6 +94,10 @@ class dijkstras {
         print(dist);
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         int graph[][] = new int[][]{{0, 4, 0, 0, 0, 0, 0, 8, 0},
         {4, 0, 8, 0, 0, 0, 0, 11, 0},

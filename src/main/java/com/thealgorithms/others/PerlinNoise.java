@@ -56,7 +56,7 @@ public class PerlinNoise {
         // normalize values so that they stay between 0..1
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
-                if(totalAmplitude =! 0)
+                if(totalAmplitude != 0.0f)
                     perlinNoise[x][y] /= totalAmplitude;
             }
         }

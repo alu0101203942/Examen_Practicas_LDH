@@ -23,6 +23,7 @@ public class MiniMaxAlgorithm {
     private int height;
     private Random rand = SecureRandom.getInstanceStrong();
 
+
     /**
      * Initializes the scores with 8 random leaf nodes
      */
@@ -95,16 +96,22 @@ public class MiniMaxAlgorithm {
      * @param maxScore The maximum possible score.
      * @return An array of random numbers.
      */
-    public static int[] getRandomScores(int size, int maxScore) {
-        int[] randomScores = new int[(int) Math.pow(2, size)];
+    public int[] getRandomScores(int size, int maxScore) throws Exception {
+        try{
+            int[] randomScores = new int[(int) Math.pow(2, size)];
 
 
-        for (int i = 0; i < randomScores.length; i++) {
-            randomScores[i] = this.rand.nextInt(maxScore) + 1;
+            for (int i = 0; i < randomScores.length; i++) {
+                randomScores[i] = rand.nextInt(maxScore) + 1;
+            }
+
+            return randomScores;
+        } catch (Exception e){
+            System.out.println (e.getMessage());
         }
+        return new int[0];
 
-        return randomScores;
-    }
+}
 
     // A utility function to find Log n in base 2
     private int log2(int n) {
